@@ -68,10 +68,7 @@ def gen_channel(parameters, fc=5E9, fs=2E9, dynamic_range=30):
     # Add frequency dependency
 
     # Zero padding before FFT to avoid artifacts
-    # Don't remember why I added this. Is it really needed?
     h = np.append(h, np.zeros(h.size, dtype=complex))
-    # if not h.size % 2 == 0:
-    #     h = np.append(h, np.zeros(1))
 
     H = np.fft.fft(h, norm='ortho')
 
